@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvPost.setHasFixedSize(true)
 
         RetrofitClient.getPost()
-                .getComment()
+                .getComment("posts/3/comments")
                 .enqueue(object : Callback<ArrayList<CommentResponse>>{
                     override fun onResponse(call: Call<ArrayList<CommentResponse>>, response: Response<ArrayList<CommentResponse>>) {
                         binding.tvResponeCode.text = response.code().toString()
@@ -81,8 +81,12 @@ class MainActivity : AppCompatActivity() {
             rvPost.layoutManager = LinearLayoutManager(this@MainActivity)
             rvPost.setHasFixedSize(true)
 
+            val parameters = HashMap<String, String>()
+            parameters["userId"] = "6"
+            parameters["id"] = "55"
+
             RetrofitClient.getPost()
-                    .getPosts()
+                    .getPosts(parameters)
                     .enqueue(object: Callback<ArrayList<PostResponse>>{
                         override fun onResponse(
                                 call: Call<ArrayList<PostResponse>>,
