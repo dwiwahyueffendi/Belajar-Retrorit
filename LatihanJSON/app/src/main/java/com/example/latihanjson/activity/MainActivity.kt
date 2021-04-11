@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnPost.setOnClickListener {
-            Intent(this, PostActivity::class.java).also {
+            Intent(this@MainActivity, PostActivity::class.java).also {
                 startActivity(it)
             }
         }

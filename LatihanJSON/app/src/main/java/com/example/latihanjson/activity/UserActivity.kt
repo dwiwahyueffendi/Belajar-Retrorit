@@ -3,7 +3,6 @@ package com.example.latihanjson.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.latihanjson.R
 import com.example.latihanjson.adapter.UserAdapter
 import com.example.latihanjson.api.RetrofitClient
 import com.example.latihanjson.data.User
